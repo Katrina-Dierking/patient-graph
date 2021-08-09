@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux'
 import { getPatientsRequest } from './redux/actions/actions-patients';
 import PatientsList from '././components/PatientsList';
-import Chart from '././components/Chart';
+import BarGraph from './components/charts/BarGraph';
+// import PieGraph from './components/charts/PieGraph';
 import {AppContainer} from './styles/AppStyles'
 
 class App extends Component {
@@ -11,12 +12,15 @@ class App extends Component {
 
     this.props.getPatientsRequest();
   }
+  
   render(){
     const patients = this.props.patients;
 
     return (
       <AppContainer>
-        <Chart />
+        <BarGraph />
+        {/* <PieGraph /> */}
+
         <PatientsList patients={patients.items}/>
       </AppContainer>
         

@@ -4,6 +4,7 @@ import Patient from './Patient'
 
 function PatientsList({patients}) {
 
+
     return (
         <div>
             {patients.sort((a,b) =>{
