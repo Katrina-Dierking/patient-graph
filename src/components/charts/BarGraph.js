@@ -8,51 +8,53 @@ import {
   Legend,
   Bar
 } from "recharts";
+
 import axios from "axios";
 
 
 
-export default function BarGraph() {
-  const [data, setData] = useState(null);
+function BarGraph() {
+    const [data, setData] = useState(null);
+  
+    const handleResponse = (res) => {
+      // console.log(res);
+      const days = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wendesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ];
+      const transformedData = days.map((day, index) => {
+        return {
+          day,
+          value: res[index].pts.length
+        }
+      })
+      setData([...transformedData])
+    }
+  
+    useEffect(() => {
+      axios
+        .get("./patients")
+        .then((res) => handleResponse(res.data))
+        .catch((err) => console.log(err));
+    }, []);
+    return (
+      <div>
+          <h3>Number of Patients Seen Each Day</h3>
+        <BarChart width={730} height={250} data={data}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="day" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Bar dataKey="value" fill="#e21979" />
+        </BarChart>
+      </div>
+    );
+  }
 
-  const handleResponse = (res) => {
-    console.log(res);
-    const days = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wendesday",
-      "Thursday",
-      "Friday",
-      "Saturday"
-    ];
-    const transFormedData = days.map((day) => {
-      const d = day.toLowerCase();
-      return {
-        day,
-        value: res.patients[d] ? res.patients[d].length : 0
-      };
-    });
-
-    setData([...transFormedData]);
-  };
-
-  useEffect(() => {
-    axios
-      .get("./patients")
-      .then((res) => handleResponse(res.data))
-      .catch((err) => console.log(err));
-  }, []);
-  return (
-    <div>
-      <BarChart width={730} height={250} data={data}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="day" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey="value" fill="#e21979" />
-      </BarChart>
-    </div>
-  );
-}
+export default BarGraph

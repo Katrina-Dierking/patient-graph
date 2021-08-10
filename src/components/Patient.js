@@ -1,16 +1,21 @@
 import React from 'react'
+import PatientInfo from './PatientInfo'
 import {PatientWrap, Button} from '../styles/PatientStyles'
 
-function Patient({patient}) {
+function Patient({patient, pts}) {
     return (
         <PatientWrap>
             <div>
-                <h2>Patient's Name: {patient.name}</h2>
-                <p>Age: {patient.age}</p>
-                <p>Day seen: {patient.day}</p>
-                <p>Complaint: {patient.complaint}</p>
-                <p>Pain scale: {patient.painScale}</p>
-                <p>Resources: {patient.resources}</p>
+                <h2>Patient's seen on {patient.day} :</h2>
+                    {patient.pts.map ((pt, index) => (
+                        <PatientInfo
+                            key={index}
+                            name={pt.name}
+                            age={pt.age}
+                            complaint = {pt.complaint}
+                            painScale={pt.painScale}
+                        />
+                    ))}
             </div>
             <div>
                 <Button>

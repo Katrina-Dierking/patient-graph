@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import { getPatientsRequest } from './redux/actions/actions-patients';
 import PatientsList from '././components/PatientsList';
 import BarGraph from './components/charts/BarGraph';
-// import PieGraph from './components/charts/PieGraph';
+import PieGraph from './components/charts/PieGraph';
 import {AppContainer} from './styles/AppStyles'
 
 class App extends Component {
@@ -19,7 +19,7 @@ class App extends Component {
     return (
       <AppContainer>
         <BarGraph />
-        {/* <PieGraph /> */}
+        <PieGraph />
 
         <PatientsList patients={patients.items}/>
       </AppContainer>
