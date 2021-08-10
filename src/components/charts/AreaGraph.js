@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import GraphNavigation from '../../components/shared/GraphNavigation'
 import {
     AreaChart,
     Area,
@@ -45,6 +46,8 @@ function AreaGraph() {
 
     return (
         <div>
+          <h2>Area Graph</h2>
+          <h4>The Number of Patients Seen Each Day</h4>
             <AreaChart
                 width={750}
                 height={400}
@@ -75,6 +78,7 @@ function AreaGraph() {
                 fillOpacity={0.3}
              /> */}
             </AreaChart>
+            <GraphNavigation />
         </div>
     )
 }

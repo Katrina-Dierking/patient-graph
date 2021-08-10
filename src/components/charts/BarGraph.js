@@ -44,6 +44,7 @@ function BarGraph() {
     }, []);
     return (
       <div>
+          <h2>Bar Graph</h2>
           <h3>Number of Patients Seen Each Day</h3>
         <BarChart width={730} height={250} data={data}>
           <CartesianGrid strokeDasharray="3 3" />

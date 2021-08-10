@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
 import { getPatientsRequest } from './redux/actions/actions-patients';
-import PatientsList from '././components/PatientsList';
-import BarGraph from './components/charts/BarGraph';
-import LineGraph from './components/charts/LineGraph'
-import AreaGraph from './components/charts/AreaGraph'
 import {AppContainer} from './styles/AppStyles'
 
-
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import Home from '././components/Home'
+import About from '././components/About'
+import Dashboard from './components/PatientFiles'
+import LineGraph from '././components/charts/LineGraph'
+import BarGraph from '././components/charts/BarGraph'
+import AreaGraph from '././components/charts/AreaGraph'
 
 class App extends Component {
   constructor(props) {
@@ -17,16 +19,22 @@ class App extends Component {
   }
   
   render(){
-    const patients = this.props.patients;
+    // const patients = this.props.patients;
 
     return (
       <AppContainer>
-        <BarGraph />
-        <LineGraph />
-        <AreaGraph />
-      
 
-        <PatientsList patients={patients.items}/>
+        <Router>
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route path = '/about' component={About} />
+            <Route path = '/dashboard' component={Dashboard} />
+            <Route path = '/linegraph' component={LineGraph} />
+            <Route path = '/bargraph' component={BarGraph} />
+            <Route path = '/areagraph' component={AreaGraph} />
+
+          </Switch>
+        </Router>
       </AppContainer>
         
     )

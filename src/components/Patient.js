@@ -1,9 +1,11 @@
 import React from 'react'
 import PatientInfo from './PatientInfo'
 import {PatientWrap, Button} from '../styles/PatientStyles'
+import GraphNavigation from '../components/shared/GraphNavigation'
 
 function Patient({patient, pts}) {
     return (
+        <>
         <PatientWrap>
             <div>
                 <h2>Patient's seen on {patient.day} :</h2>
@@ -23,6 +25,7 @@ function Patient({patient, pts}) {
                 </Button>
             </div>
         </PatientWrap>
+        </>
     )
 }
 

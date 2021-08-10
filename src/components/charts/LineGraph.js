@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import GraphNavigation from '../../components/shared/GraphNavigation'
 import {
   LineChart,
   Line,
@@ -42,6 +43,9 @@ function LineGraph() {
     }, []);
 
     return (
+      <>
+      <h2>Line Graph</h2>
+      <h4>The Number of Patients Seen Each Day</h4>
         <LineChart
             width={760}
             height={300}
@@ -65,6 +69,8 @@ function LineGraph() {
                 strokeDasharray="5 5"
             />
       </LineChart>
+      <GraphNavigation />
+      </>
     )
 }
 
