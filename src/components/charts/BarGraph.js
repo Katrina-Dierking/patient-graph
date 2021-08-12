@@ -38,7 +38,7 @@ function BarGraph() {
   
     useEffect(() => {
       axios
-        .get("./patients")
+        .get('./patients')
         .then((res) => handleResponse(res.data))
         .catch((err) => console.log(err));
     }, []);

@@ -8,7 +8,7 @@ import {
     CartesianGrid,
     Tooltip
   } from "recharts";
-  import { curveCardinal } from "d3-shape";
+  // import { curveCardinal } from "d3-shape";
   import axios from 'axios'
 
 
@@ -39,7 +39,7 @@ function AreaGraph() {
   
     useEffect(() => {
       axios
-        .get("./patients")
+        .get('./patients')
         .then((res) => handleResponse(res.data))
         .catch((err) => console.log(err));
     }, []);

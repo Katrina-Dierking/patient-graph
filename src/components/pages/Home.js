@@ -1,15 +1,15 @@
 import React from 'react'
-import SideBarNav from '../components/shared/SideBarNav'
-import BarGraph from './charts/BarGraph'
-import GraphNavigation from '../components/shared/GraphNavigation'
+import SideBarNav from '../shared/SideBarNav'
+import BarGraph from '../charts/BarGraph'
+import GraphNavigation from '../shared/GraphNavigation'
 import Lottie from 'react-lottie';
-import animationData from '../lotties/health-care.json'
+import animationData from '../../lotties/health-care.json'
 import {
     HomeWrap,
     TopWrap,
     AnimationWrap, 
     
-    } from '../styles/HomeStyles'
+    } from '../../styles/HomeStyles'
 
 function Home() {
     const defaultOptions = {
