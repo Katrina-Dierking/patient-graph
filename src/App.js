@@ -8,6 +8,7 @@ import "semantic-ui-css/semantic.min.css"
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Home from './components/pages/Home'
 import About from './components/pages/About'
+import Login from './components/login/Login'
 import Dashboard from './components/pages/Dashboard'
 import LineGraph from '././components/charts/LineGraph'
 import BarGraph from '././components/charts/BarGraph'
@@ -34,6 +35,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route path = '/about' component={About} />
+            <Route path = '/login' component={Login} />
             <Route path = '/dashboard' component={Dashboard} />
             <Route path = '/linegraph' component={LineGraph} />
             <Route path = '/bargraph' component={BarGraph} />

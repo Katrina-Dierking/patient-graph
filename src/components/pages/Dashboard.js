@@ -12,18 +12,14 @@ import {
     TopWrap,
     ButtonWrap
     } from '../../styles/DashboardStyles'
+import UserPage from './UserPage'
+
 
 
 
 function Dashboard() {
 
-     const [notes, setNotes] = useState ([
-        {
-            id: '1', 
-            name: 'John Doe',
-            body: 'improved'
-        }
-     ])
+     const [notes, setNotes] = useState ([])
 
     const addNewNote = (note) => {
         const newNote = {
@@ -35,9 +31,6 @@ function Dashboard() {
         setNotes([...notes, {...note, id: Date.now() }]);
     }
 
-    // const handleSubmit = () => {
-        
-    // }
 
 
     return (
@@ -52,9 +45,8 @@ function Dashboard() {
                     <Link to='/patientcards'><button>View Patient Cards</button></Link>
                 </ButtonWrap>
             </TopWrap>
-            <DailyNotesForm addNewNote={addNewNote} name="default name"/>
+            <DailyNotesForm addNewNote={addNewNote} />
             <Notes notes={notes} />
-         
         </div>
     )
 }

@@ -1,5 +1,7 @@
 import { takeEvery, call, fork, put } from '@redux-saga/core/effects';
 import * as actions from '../actions/actions-patients';
+
+import * as types from '../config/actionTypes'
 import * as api from '../../api/patients';
 
 
@@ -14,7 +16,7 @@ function* getPatients(){
     }
 }
 function* watchGetPatientsRequest(){
-    yield takeEvery(actions.Types.GET_PATIENTS_REQUEST, getPatients);
+    yield takeEvery(types.GET_PATIENTS_REQUEST, getPatients);
 }
 
 const patientsSagas = [

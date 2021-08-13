@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap'
+import { NoteContainer } from '../../../styles/NoteStyles'
 
 function DailyNotesForm({name, addNewNote}) {
 
@@ -27,6 +28,7 @@ function DailyNotesForm({name, addNewNote}) {
 
     console.log("note", note)
     return (
+        <NoteContainer>
         <Form onSubmit={submitForm}>
             <FormGroup>
                 <Label htmlFor="name">Daily Notes</Label>
@@ -40,8 +42,8 @@ function DailyNotesForm({name, addNewNote}) {
                     onChange={handleChanges}
                 />
             </FormGroup>
-            <FormGroup>
-                <Label htmlFor="body">Note</Label>
+            <FormGroup className="noteSec">
+                <Label htmlFor="body">Notes</Label>
                 <Input
                     required
                     id="body"
@@ -53,12 +55,11 @@ function DailyNotesForm({name, addNewNote}) {
                 />
             </FormGroup>
 
-            <FormGroup>
-                <Button 
-                    type="submit">Add Note
-                </Button>
+            <FormGroup className="noteBtn">
+                <Button type="submit" className="subBtn">Add Note</Button>
             </FormGroup>
         </Form>
+        </NoteContainer>
     )
 }
 
