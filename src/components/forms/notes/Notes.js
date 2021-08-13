@@ -1,9 +1,11 @@
 import React from 'react'
+import { NotesWrap} from '../../../styles/NoteStyles'
 
 
 function Notes(props) {
     return (
-        <div>
+        <NotesWrap>
+        
             {props.notes.map(note => (
                 <div className="note"
                     key={note.id}>
@@ -11,7 +13,8 @@ function Notes(props) {
                         <p>{note.body}</p>
                 </div>
             ))}
-        </div>
+        
+        </NotesWrap>
     )
 }
 

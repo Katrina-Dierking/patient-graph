@@ -1,7 +1,9 @@
-import React from 'react'
+
 import SideBarNav from '../shared/SideBarNav'
-import BarGraph from '../charts/BarGraph'
 import GraphNavigation from '../shared/GraphNavigation'
+
+import BarGraph from '../charts/BarGraph'
+
 import Lottie from 'react-lottie';
 import animationData from '../../lotties/health-care.json'
 import {
@@ -36,7 +38,7 @@ function Home() {
             </TopWrap>
             <GraphNavigation />
             
-            <BarGraph className ="bar"/>
+            <BarGraph />
            
         </HomeWrap>
     );

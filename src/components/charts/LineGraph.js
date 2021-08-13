@@ -10,6 +10,9 @@ import {
   Legend
 } from "recharts";
 import axios from "axios";
+import { HeaderWrap } from "../../styles/DashboardStyles";
+import TopNav from "../shared/TopNav";
+import PatientNav from "../shared/PatientNav";
 
 
 function LineGraph() {
@@ -44,7 +47,12 @@ function LineGraph() {
 
     return (
       <>
-      <h2>Line Graph</h2>
+        <HeaderWrap>
+            <h2 className="title">LINE GRAPH</h2>
+            <TopNav />
+        </HeaderWrap>
+        <PatientNav />
+
       <h4>The Number of Patients Seen Each Day</h4>
         <LineChart
             width={760}

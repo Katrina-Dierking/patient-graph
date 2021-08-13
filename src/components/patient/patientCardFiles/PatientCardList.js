@@ -4,6 +4,7 @@ import axios from 'axios'
 import GraphNavigation from '../../shared/GraphNavigation';
 import TopNav from '../../shared/TopNav'
 import {HeaderNav, PatientListWrap} from '../../../styles/PatientStyles'
+import PatientNav from '../../shared/PatientNav';
 
 function PatientCardList() {
 
@@ -29,6 +30,7 @@ function PatientCardList() {
                 <h2>Patient Files:</h2> 
                 <TopNav />
         </HeaderNav>    
+        <PatientNav />
         <PatientListWrap>
             {patients.map((patient) => (
                 <PatientCard key={patient.id} patient={patient}/>

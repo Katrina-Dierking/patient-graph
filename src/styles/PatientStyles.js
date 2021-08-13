@@ -9,6 +9,8 @@ export const PatientCardWrap = styled.section`
 
     .toggle {
         display:flex;
+        justify-content: space-evenly;
+        padding:3%;
         width: 100%;
         background-color:green;
         box-shadow: -3px 10px 15px -3px rgba(0,0,0,0.74) inset;
@@ -46,14 +48,6 @@ export const PatientListWrap = styled.div`
     }
 
 `
-
-// export const Button = styled.button`
-//     border: 1px solid teal;
-//     width: 30%;
-//     background-color:white;
-//     padding: 1%;
-//     border-radius: 8%;
-// `                                                                                                                          
 
 export const HeaderNav = styled.nav`
     background-color:teal;
@@ -145,15 +139,26 @@ export const CardDayWrap = styled.section`
 
 export const PainContainer = styled.div`
     display:flex;
-    width: 60%;
+    width: 100%;
     justify-content: space-evenly;
+    background-color:yellow;
+    margin-bottom: 5%;
+    padding: 2%;
 
     .painBts {
         width: 30%;
-        margin-top:10%;
+        // margin-top:10%;
+        background-color:red;
+
 
         .button {
             margin-right: 10%;
+            width: 40%;
+            border-radius: 25%;
         }
+    }
+
+    .pain {
+        background-color:blue;
     }
 `

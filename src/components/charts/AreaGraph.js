@@ -11,6 +11,10 @@ import {
   // import { curveCardinal } from "d3-shape";
   import axios from 'axios'
 
+  import { HeaderWrap } from '../../styles/DashboardStyles'
+import TopNav from '../shared/TopNav';
+import PatientNav from '../shared/PatientNav';
+
 
 
 function AreaGraph() {
@@ -46,7 +50,11 @@ function AreaGraph() {
 
     return (
         <div>
-          <h2>Area Graph</h2>
+          <HeaderWrap>
+                <h2 className="title">AREA GRAPH</h2>
+                <TopNav />
+            </HeaderWrap>
+            <PatientNav />
           <h4>The Number of Patients Seen Each Day</h4>
             <AreaChart
                 width={750}

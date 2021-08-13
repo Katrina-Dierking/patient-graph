@@ -1,9 +1,14 @@
-import React, {useState, useEffect} from 'react'
-import Patient from './PatientList'
+import {useState, useEffect} from 'react'
 import axios from 'axios'
+
+import Patient from './PatientList'
+
 import GraphNavigation from '../../shared/GraphNavigation';
+import PatientNav from '../../shared/PatientNav';
 import TopNav from '../../shared/TopNav'
+
 import {HeaderNav, PatientListWrap} from '../../../styles/PatientStyles'
+
 
 function PatientListFiles() {
 
@@ -28,7 +33,8 @@ function PatientListFiles() {
         <HeaderNav>
                 <h2>Patient List:</h2> 
                 <TopNav />
-        </HeaderNav>    
+        </HeaderNav>   
+        <PatientNav /> 
         <PatientListWrap>
             {patients.map((patient) => (
                 <Patient key={patient.id} patient={patient}/>

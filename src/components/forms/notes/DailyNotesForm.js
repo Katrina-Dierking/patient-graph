@@ -11,6 +11,7 @@ function DailyNotesForm({name, addNewNote}) {
             body: ''
 
         });
+   
 
 
     const handleChanges = e => {
@@ -24,9 +25,13 @@ function DailyNotesForm({name, addNewNote}) {
         e.preventDefault();
         addNewNote(note)
         setNote({name: '', body: ''})
+
+    
     }
 
     console.log("note", note)
+
+
     return (
         <NoteContainer>
         <Form onSubmit={submitForm}>

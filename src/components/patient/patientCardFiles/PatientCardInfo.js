@@ -24,7 +24,7 @@ function PatientCardInfo({ name, age, complaint, painScale}) {
                         <h5 className="ptInfo">Starting pain scale: {painScale}</h5> 
                     </ul>
                 </div>
-                {/* <div className = "ptBtns"> */}
+             
                     <PainScalePoints 
                         incrementPain={incrementPain}
                         decrementPain={decrementPain}
@@ -35,8 +35,7 @@ function PatientCardInfo({ name, age, complaint, painScale}) {
                             <input type="checkbox" />
                             <h5 >Patient Discharged</h5>
                     </div>
-                    
-                {/* </div> */}
+          
             </PatientInfoCardWrap>
     )
 }

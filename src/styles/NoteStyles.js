@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+
+
 export const NoteContainer = styled.section`
     width: 50%;
     display:flex;
@@ -17,4 +19,8 @@ export const NoteContainer = styled.section`
             background-color:teal;
         }
     }
+`
+
+export const NotesWrap = styled.div`
+
 `

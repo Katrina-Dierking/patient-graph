@@ -14,7 +14,7 @@ import LineGraph from '././components/charts/LineGraph'
 import BarGraph from '././components/charts/BarGraph'
 import AreaGraph from '././components/charts/AreaGraph'
 import PatientFiles from './components/patient/patientListFiles/PatientListFiles'
-import PatientCards from './components/patient/patientCardFiles/PatientCards'
+import PatientCardList from './components/patient/patientCardFiles/PatientCardList'
 
 
 
@@ -41,7 +41,7 @@ class App extends Component {
             <Route path = '/bargraph' component={BarGraph} />
             <Route path = '/areagraph' component={AreaGraph} />
             <Route path = '/patientfiles' component={PatientFiles} />
-            <Route path = '/patientcards' component={PatientCards} />
+            <Route path = '/patientcardlist' component={PatientCardList} />
         
 
           </Switch>
