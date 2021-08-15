@@ -70,9 +70,6 @@ export const PatientInfoCardWrap = styled.div`
    padding:2.5%;
    margin-top: 5%;
    margin-left: 70%;
-//    box-shadow: 10px 8px 20px -3px rgba(0,0,0,0.74);
-//     -webkit-box-shadow: 10px 8px 20px -3px rgba(0,0,0,0.74);
-//     -moz-box-shadow: 10px 8px 20px -3px rgba(0,0,0,0.74);   
 
 
 box-shadow:
@@ -141,15 +138,11 @@ export const PainContainer = styled.div`
     display:flex;
     width: 100%;
     justify-content: space-evenly;
-    background-color:yellow;
     margin-bottom: 5%;
     padding: 2%;
 
     .painBts {
         width: 30%;
-        // margin-top:10%;
-        background-color:red;
-
 
         .button {
             margin-right: 10%;
