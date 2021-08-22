@@ -1,8 +1,3 @@
-// export const Types = {
-//     GET_PATIENTS_REQUEST: 'patients/get_patients_request',
-//     GET_PATIENTS_SUCCESS: 'patients/get_patients_success',
-// };
-
 import * as types from '../config/actionTypes'
 
 export const getPatientsRequest = () => ({
