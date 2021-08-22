@@ -1,18 +1,9 @@
-import React, {useState} from 'react'
-import PainScalePoints from './PainScalePoints'
+import React from 'react'
+import PainScaleCounter from './PainScaleCounter'
 import {PatientInfoCardWrap} from '../../../styles/PatientStyles'
 
 function PatientCardInfo({ name, age, complaint, painScale}) {
 
-    const [pain, setPain] = useState(painScale);
-
-    const incrementPain = () => {
-        setPain(pain => pain + 1);
-    };
-
-    const decrementPain = () => {
-        setPain(pain => pain - 1);
-    };
 
     return (
             <PatientInfoCardWrap>
@@ -24,13 +15,8 @@ function PatientCardInfo({ name, age, complaint, painScale}) {
                         <h5 className="ptInfo">Starting pain scale: {painScale}</h5> 
                     </ul>
                 </div>
-             
-                    <PainScalePoints 
-                        incrementPain={incrementPain}
-                        decrementPain={decrementPain}
-                        pain={pain}
-                    />
 
+                    <PainScaleCounter painScale={painScale} />
                     <div className="toggle">
                             <input type="checkbox" />
                             <h5 >Patient Discharged</h5>

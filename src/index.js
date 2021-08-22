@@ -1,22 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom'
-import './index.css';
 import App from './App';
-import axios from 'axios';
-import reducers from './redux/reducers/index';
+// import axios from 'axios';
+import { reducer } from './redux/reducers/index';
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import rootSaga from './redux/sagas/index'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
 
 // axios.defaults.withCredentials = true;
-axios.defaults.baseURL = 'https://my-patient-api.herokuapp.com'
+// axios.defaults.baseURL = 'https://my-patient-api.herokuapp.com'
 
 const sagaMiddleware = createSagaMiddleware();
-const store = createStore(reducers, applyMiddleware(sagaMiddleware) );
+const store = createStore(reducer, applyMiddleware(sagaMiddleware) );
 sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
