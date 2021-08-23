@@ -3,6 +3,7 @@ import PatientCardInfo from './PatientCardInfo'
 import {PatientCardWrap, CardDayWrap} from '../../../styles/PatientStyles'
 
 function PatientCard({patient}) {
+    console.log(patient)
     return (
        <>
         <CardDayWrap><h3 className="dayLabel">Patients seen on {patient.day} :</h3></CardDayWrap>

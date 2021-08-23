@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+// import {useDispatch, useSelector} from 'react-redux'
 import GraphNavigation from '../../components/shared/GraphNavigation'
 import {
     AreaChart,
@@ -8,18 +9,26 @@ import {
     CartesianGrid,
     Tooltip
   } from "recharts";
-  // import { curveCardinal } from "d3-shape";
+
   import axios from 'axios'
 
   import { HeaderWrap } from '../../styles/DashboardStyles'
 import TopNav from '../shared/TopNav';
 import PatientNav from '../shared/PatientNav';
+// import {getPatientsRequest} from '../../redux/actions/actions-patients'
 
 
 
 function AreaGraph() {
 
     const [data, setData] = useState(null);
+    // const dispatch = useDispatch();
+
+    // useEffect(() => {
+    //   dispatch(getPatientsRequest())
+    // }, [dispatch]);
+ 
+    // const patient = useSelector((state) => state.patients.items)
   
     const handleResponse = (res) => {
       // console.log(res);
@@ -47,6 +56,8 @@ function AreaGraph() {
         .then((res) => handleResponse(res.data))
         .catch((err) => console.log(err));
     }, []);
+
+  
 
     return (
         <div>
@@ -78,13 +89,6 @@ function AreaGraph() {
                 fill="#8884d8"
                 fillOpacity={0.3}
             />
-            {/* <Area
-                type={cardinal}
-                dataKey="gender"
-                stroke="#82ca9d"
-                fill="#82ca9d"
-                fillOpacity={0.3}
-             /> */}
             </AreaChart>
             <GraphNavigation />
         </div>
