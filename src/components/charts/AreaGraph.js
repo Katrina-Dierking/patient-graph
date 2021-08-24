@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import GraphNavigation from '../../components/shared/GraphNavigation'
 import {
@@ -10,7 +10,7 @@ import {
     Tooltip
   } from "recharts";
 
-  import axios from 'axios'
+
 
   import { HeaderWrap } from '../../styles/DashboardStyles'
 import TopNav from '../shared/TopNav';
