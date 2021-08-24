@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-// import {useDispatch, useSelector} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import GraphNavigation from '../../components/shared/GraphNavigation'
 import {
     AreaChart,
@@ -15,47 +15,47 @@ import {
   import { HeaderWrap } from '../../styles/DashboardStyles'
 import TopNav from '../shared/TopNav';
 import PatientNav from '../shared/PatientNav';
-// import {getPatientsRequest} from '../../redux/actions/actions-patients'
+import { getDaysRequest } from '../../redux/actions/actions-days'
 
 
 
 function AreaGraph() {
 
-    const [data, setData] = useState(null);
-    // const dispatch = useDispatch();
+    // const [data, setData] = useState(null);
+    const dispatch = useDispatch();
 
-    // useEffect(() => {
-    //   dispatch(getPatientsRequest())
-    // }, [dispatch]);
- 
-    // const patient = useSelector((state) => state.patients.items)
-  
-    const handleResponse = (res) => {
-      // console.log(res);
-      const days = [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wendesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
-      ];
-      const transformedData = days.map((day, index) => {
-        return {
-          day,
-          value: res[index].pts.length
-        }
-      })
-      setData([...transformedData])
-    }
-  
     useEffect(() => {
-      axios
-        .get('./patients')
-        .then((res) => handleResponse(res.data))
-        .catch((err) => console.log(err));
-    }, []);
+      dispatch(getDaysRequest())
+    }, [dispatch]);
+ 
+    const patients = useSelector((state) => state.patients.days)
+  
+    // const handleResponse = (res) => {
+    //   // console.log(res);
+    //   const days = [
+    //     "Sunday",
+    //     "Monday",
+    //     "Tuesday",
+    //     "Wendesday",
+    //     "Thursday",
+    //     "Friday",
+    //     "Saturday"
+    //   ];
+    //   const transformedData = days.map((day, index) => {
+    //     return {
+    //       day,
+    //       value: res[index].pts.length
+    //     }
+    //   })
+    //   setData([...transformedData])
+    // }
+  
+    // useEffect(() => {
+    //   axios
+    //     .get('./patients')
+    //     .then((res) => handleResponse(res.data))
+    //     .catch((err) => console.log(err));
+    // }, []);
 
   
 
@@ -70,7 +70,7 @@ function AreaGraph() {
             <AreaChart
                 width={750}
                 height={400}
-                data={data}
+                data={patients}
                 margin={{
                     top: 10,
                     right: 30,

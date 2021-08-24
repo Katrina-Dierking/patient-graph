@@ -55,7 +55,7 @@ function LineGraph() {
 
       <h4>The Number of Patients Seen Each Day</h4>
         <LineChart
-            width={760}
+            width={1060}
             height={300}
             data={data}
             margin={{

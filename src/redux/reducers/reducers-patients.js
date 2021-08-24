@@ -1,5 +1,3 @@
-
-
 import * as types from '../config/actionTypes'
 
 const INITIAL_STATE = {
