@@ -49,7 +49,7 @@ function BarGraph() {
           <h2>BAR GRAPH</h2>
           <h3>Number of Patients Seen Each Day</h3>
           <br></br>
-        <BarChart width={730} height={250} data={data}>
+        <BarChart width={930} height={450} data={data}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="day" />
           <YAxis />

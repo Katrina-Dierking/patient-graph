@@ -1,5 +1,3 @@
-// import {Types} from '../actions/actions-patients'
-
 import * as types from '../config/actionTypes'
 
 const INITIAL_STATE = {

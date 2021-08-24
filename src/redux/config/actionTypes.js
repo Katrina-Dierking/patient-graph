@@ -3,6 +3,9 @@
 export const GET_PATIENTS_REQUEST = 'get_patients_request'
 export const GET_PATIENTS_SUCCESS = 'get_patients_success'
 
+export const GET_DAYS_REQUEST = 'get_days_request'
+export const GET_DAYS_SUCCESS = 'get_days_success'
+
 export const INCREMENT = 'increment'
 export const DECREMENT = 'decrement'
 

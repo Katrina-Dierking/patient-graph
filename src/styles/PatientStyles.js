@@ -6,6 +6,7 @@ export const PatientCardWrap = styled.section`
     flex-wrap:wrap;  
     width: 40%; 
     margin-top: 2%;
+    padding: 5%;
 
     .toggle {
         display:flex;
@@ -120,7 +121,7 @@ box-shadow:
 export const CardDayWrap = styled.section`
     background-color:lavender;
     padding: 2%;
-    margin-top: 3%;
+    // margin-top: 3%;
     width: 100%;
     text-align:center;
     box-shadow: -3px 10px 15px -3px rgba(0,0,0,0.74);

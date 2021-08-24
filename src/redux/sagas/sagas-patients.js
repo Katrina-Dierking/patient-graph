@@ -5,7 +5,8 @@ import * as types from '../config/actionTypes'
 import * as api from '../../api/patients';
 
 
-function* getPatients(){
+
+export function* getPatients(){
     try{
         const result = yield call(api.getPatients);
         yield put(actions.getPatientsSuccess({
@@ -22,5 +23,6 @@ function* watchGetPatientsRequest(){
 const patientsSagas = [
     fork(watchGetPatientsRequest)
 ];
+
 
 export default patientsSagas;
