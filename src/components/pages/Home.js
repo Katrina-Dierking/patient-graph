@@ -12,6 +12,7 @@ import {
     AnimationWrap, 
     
     } from '../../styles/HomeStyles'
+import Samples from '../samples/Samples';
 
 function Home() {
     const defaultOptions = {
@@ -27,7 +28,7 @@ function Home() {
         <HomeWrap>
             <TopWrap>
                 <SideBarNav />
-            
+                <Samples />
                 <AnimationWrap>
                     <Lottie 
                     options={defaultOptions}
